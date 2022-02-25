@@ -17,7 +17,7 @@ import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry;
 
 public class MethodCallHandlerImpl
-        implements MethodCallHandler, PluginRegistry.RequestPermissionsResultListener {
+    implements MethodCallHandler, PluginRegistry.RequestPermissionsResultListener {
 
   private static final int RECORD_AUDIO_REQUEST_CODE = 1001;
 
@@ -52,11 +52,11 @@ public class MethodCallHandlerImpl
         }
 
         recorder.start(
-                path,
-                (int) call.argument("encoder"),
-                (int) call.argument("bitRate"),
-                (double) call.argument("samplingRate"),
-                result);
+            path,
+            (int) call.argument("encoder"),
+            (int) call.argument("bitRate"),
+            (double) call.argument("samplingRate"),
+            result);
         break;
       case "stop":
         recorder.stop(result);
@@ -95,10 +95,9 @@ public class MethodCallHandlerImpl
 
   @Override
   public boolean onRequestPermissionsResult(
-          int requestCode,
-          String[] permissions,
-          int[] grantResults
-  ) {
+      int requestCode,
+      String[] permissions,
+      int[] grantResults) {
     if (requestCode == RECORD_AUDIO_REQUEST_CODE) {
       if (pendingPermResult != null) {
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -130,9 +129,8 @@ public class MethodCallHandlerImpl
 
   private void askForPermission() {
     ActivityCompat.requestPermissions(
-            activity,
-            new String[]{Manifest.permission.RECORD_AUDIO},
-            MethodCallHandlerImpl.RECORD_AUDIO_REQUEST_CODE
-    );
+        activity,
+        new String[] { Manifest.permission.RECORD_AUDIO },
+        MethodCallHandlerImpl.RECORD_AUDIO_REQUEST_CODE);
   }
 }

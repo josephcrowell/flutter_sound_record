@@ -25,12 +25,11 @@ class Recorder {
   private Double maxAmplitude = -160.0;
 
   void start(
-          @NonNull String path,
-          int encoder,
-          int bitRate,
-          double samplingRate,
-          @NonNull Result result
-  ) {
+      @NonNull String path,
+      int encoder,
+      int bitRate,
+      double samplingRate,
+      @NonNull Result result) {
     stopRecording();
 
     Log.d(LOG_TAG, "Start recording");
