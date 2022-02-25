@@ -12,7 +12,8 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
-  record_platform_interface: ^0.2.0
+  record_platform_interface:
+    path: ../record_platform_interface
 
 dev_dependencies:
   flutter_test:
@@ -23,4 +24,4 @@ flutter:
     platforms:
       web:
         pluginClass: RecordPluginWeb
-        fileName: 'record_web.dart'
+        fileName: "record_web.dart"
