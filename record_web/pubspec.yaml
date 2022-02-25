@@ -12,6 +12,9 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
+  record_platform_interface: 0.2.0
+
+dependency_overrides:
   record_platform_interface:
     path: ../record_platform_interface
 
