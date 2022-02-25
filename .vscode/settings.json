@@ -1,0 +1,41 @@
+{
+    "dart.lineLength": 120,
+    "dart.previewFlutterUiGuides": true,
+    "dart.previewFlutterUiGuidesCustomTracking": true,
+    "dart.previewHotReloadOnSaveWatcher": true,
+    "dart.devToolsBrowser": "default",
+    "highlight-matching-tag.styles": {
+        "opening": {
+            "left": {
+                "underline": "#C94A00"
+            },
+            "right": {
+                "surround": "#FD7BDD"
+            },
+            "name": {
+                "highlight": "rgba(180, 20, 80, 0.3)"
+            }
+        },
+        "closing": {
+            "full": {
+                "custom": {
+                    "dark": {
+                        "borderWidth": "0 0 1px 0",
+                        "borderColor": "white",
+                        "borderStyle": "solid",
+                        "borderRadius": "4px",
+                        "right": "10px"
+                    },
+                    "light": {
+                        "borderWidth": "0 0 1px 0",
+                        "borderColor": "brown",
+                        "borderStyle": "solid",
+                        "borderRadius": "4px",
+                        "right": "10px"
+                    }
+                }
+            }
+        }
+    },
+    "dart.previewLsp": true
+}
