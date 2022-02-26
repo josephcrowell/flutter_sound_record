@@ -4,25 +4,25 @@ import 'package:record_platform_interface/src/types/amplitude.dart';
 import 'package:record_platform_interface/src/types/audio_encoder.dart';
 
 class MethodChannelRecord extends RecordPlatform {
-  static const MethodChannel _channel = const MethodChannel(
+  static const MethodChannel _channel = MethodChannel(
     'com.llfbandit.record',
   );
 
   @override
   Future<bool> hasPermission() async {
-    final result = await _channel.invokeMethod<bool>('hasPermission');
+    final bool? result = await _channel.invokeMethod<bool>('hasPermission');
     return result ?? false;
   }
 
   @override
   Future<bool> isPaused() async {
-    final result = await _channel.invokeMethod<bool>('isPaused');
+    final bool? result = await _channel.invokeMethod<bool>('isPaused');
     return result ?? false;
   }
 
   @override
   Future<bool> isRecording() async {
-    final result = await _channel.invokeMethod<bool>('isRecording');
+    final bool? result = await _channel.invokeMethod<bool>('isRecording');
     return result ?? false;
   }
 
@@ -43,11 +43,11 @@ class MethodChannelRecord extends RecordPlatform {
     int bitRate = 128000,
     double samplingRate = 44100.0,
   }) {
-    return _channel.invokeMethod('start', {
-      "path": path,
-      "encoder": encoder.index,
-      "bitRate": bitRate,
-      "samplingRate": samplingRate,
+    return _channel.invokeMethod('start', <dynamic, dynamic>{
+      'path': path,
+      'encoder': encoder.index,
+      'bitRate': bitRate,
+      'samplingRate': samplingRate,
     });
   }
 
@@ -63,7 +63,7 @@ class MethodChannelRecord extends RecordPlatform {
 
   @override
   Future<Amplitude> getAmplitude() async {
-    final result = await _channel.invokeMethod('getAmplitude');
+    final dynamic result = await _channel.invokeMethod('getAmplitude');
 
     return Amplitude(
       current: result?['current'] ?? 0.0,

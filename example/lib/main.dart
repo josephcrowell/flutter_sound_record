@@ -1,17 +1,25 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart' as ap;
 import 'package:record/record.dart';
 import 'package:record_example/audio_player.dart';
 
 class AudioRecorder extends StatefulWidget {
-  final void Function(String path) onStop;
+  const AudioRecorder({required this.onStop, Key? key}) : super(key: key);
 
-  const AudioRecorder({required this.onStop});
+  final void Function(String path) onStop;
 
   @override
   _AudioRecorderState createState() => _AudioRecorderState();
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(ObjectFlagProperty<void Function(String path)>.has('onStop', onStop));
+  }
 }
 
 class _AudioRecorderState extends State<AudioRecorder> {
@@ -20,7 +28,7 @@ class _AudioRecorderState extends State<AudioRecorder> {
   int _recordDuration = 0;
   Timer? _timer;
   Timer? _ampTimer;
-  final _audioRecorder = Record();
+  final Record _audioRecorder = Record();
   Amplitude? _amplitude;
 
   @override
@@ -43,7 +51,7 @@ class _AudioRecorderState extends State<AudioRecorder> {
       home: Scaffold(
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -54,7 +62,7 @@ class _AudioRecorderState extends State<AudioRecorder> {
                 _buildText(),
               ],
             ),
-            if (_amplitude != null) ...[
+            if (_amplitude != null) ...<Widget>[
               const SizedBox(height: 40),
               Text('Current: ${_amplitude?.current ?? 0.0}'),
               Text('Max: ${_amplitude?.max ?? 0.0}'),
@@ -70,10 +78,10 @@ class _AudioRecorderState extends State<AudioRecorder> {
     late Color color;
 
     if (_isRecording || _isPaused) {
-      icon = Icon(Icons.stop, color: Colors.red, size: 30);
+      icon = const Icon(Icons.stop, color: Colors.red, size: 30);
       color = Colors.red.withOpacity(0.1);
     } else {
-      final theme = Theme.of(context);
+      final ThemeData theme = Theme.of(context);
       icon = Icon(Icons.mic, color: theme.primaryColor, size: 30);
       color = theme.primaryColor.withOpacity(0.1);
     }
@@ -100,11 +108,11 @@ class _AudioRecorderState extends State<AudioRecorder> {
     late Color color;
 
     if (!_isPaused) {
-      icon = Icon(Icons.pause, color: Colors.red, size: 30);
+      icon = const Icon(Icons.pause, color: Colors.red, size: 30);
       color = Colors.red.withOpacity(0.1);
     } else {
-      final theme = Theme.of(context);
-      icon = Icon(Icons.play_arrow, color: Colors.red, size: 30);
+      final ThemeData theme = Theme.of(context);
+      icon = const Icon(Icons.play_arrow, color: Colors.red, size: 30);
       color = theme.primaryColor.withOpacity(0.1);
     }
 
@@ -126,7 +134,7 @@ class _AudioRecorderState extends State<AudioRecorder> {
       return _buildTimer();
     }
 
-    return Text("Waiting to record");
+    return const Text('Waiting to record');
   }
 
   Widget _buildTimer() {
@@ -135,14 +143,14 @@ class _AudioRecorderState extends State<AudioRecorder> {
 
     return Text(
       '$minutes : $seconds',
-      style: TextStyle(color: Colors.red),
+      style: const TextStyle(color: Colors.red),
     );
   }
 
   String _formatNumber(int number) {
     String numberStr = number.toString();
     if (number < 10) {
-      numberStr = '0' + numberStr;
+      numberStr = '0$numberStr';
     }
 
     return numberStr;
@@ -162,14 +170,16 @@ class _AudioRecorderState extends State<AudioRecorder> {
         _startTimer();
       }
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 
   Future<void> _stop() async {
     _timer?.cancel();
     _ampTimer?.cancel();
-    final path = await _audioRecorder.stop();
+    final String? path = await _audioRecorder.stop();
 
     widget.onStop(path!);
 
@@ -199,8 +209,7 @@ class _AudioRecorderState extends State<AudioRecorder> {
       setState(() => _recordDuration++);
     });
 
-    _ampTimer =
-        Timer.periodic(const Duration(milliseconds: 200), (Timer t) async {
+    _ampTimer = Timer.periodic(const Duration(milliseconds: 200), (Timer t) async {
       _amplitude = await _audioRecorder.getAmplitude();
       setState(() {});
     });
@@ -208,10 +217,12 @@ class _AudioRecorderState extends State<AudioRecorder> {
 }
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -233,7 +244,7 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: showPlayer
               ? Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: AudioPlayer(
                     source: audioSource!,
                     onDelete: () {
@@ -242,7 +253,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                 )
               : AudioRecorder(
-                  onStop: (path) {
+                  onStop: (String path) {
                     setState(() {
                       audioSource = ap.AudioSource.uri(Uri.parse(path));
                       showPlayer = true;
@@ -252,5 +263,12 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<bool>('showPlayer', showPlayer));
+    properties.add(DiagnosticsProperty<ap.AudioSource?>('audioSource', audioSource));
   }
 }

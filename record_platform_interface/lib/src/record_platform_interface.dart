@@ -10,12 +10,12 @@ import 'package:record_platform_interface/src/types/types.dart';
 /// implementation, while platform implementations that merely implement the
 /// interface will be broken by newly added [RecordPlatform] functions.
 abstract class RecordPlatform extends PlatformInterface {
-  /// A token used for verification of subclasses to ensure they extend this
-  /// class instead of implementing it.
-  static const _token = Object();
-
   /// Constructs a [RecordPlatform].
   RecordPlatform() : super(token: _token);
+
+  /// A token used for verification of subclasses to ensure they extend this
+  /// class instead of implementing it.
+  static const Object _token = Object();
 
   static RecordPlatform _instance = MethodChannelRecord();
 
@@ -66,7 +66,7 @@ abstract class RecordPlatform extends PlatformInterface {
   Future<void> resume();
 
   /// Checks if there's valid recording session.
-  /// So if session is paused, this method will still return [true].
+  /// So if session is paused, this method will still return [bool.true].
   Future<bool> isRecording();
 
   /// Checks if recording session is paused.

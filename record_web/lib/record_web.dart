@@ -13,7 +13,7 @@ class RecordPluginWeb extends RecordPlatform {
   // Media recorder object
   html.MediaRecorder? _mediaRecorder;
   // Audio data
-  List<html.Blob> _chunks = [];
+  List<html.Blob> _chunks = <html.Blob>[];
   // Completer to get data & stop events before `stop()` method ends
   Completer<String>? _onStopCompleter;
 
@@ -25,11 +25,13 @@ class RecordPluginWeb extends RecordPlatform {
 
   @override
   Future<bool> hasPermission() async {
-    final mediaDevices = html.window.navigator.mediaDevices;
-    if (mediaDevices == null) return false;
+    final html.MediaDevices? mediaDevices = html.window.navigator.mediaDevices;
+    if (mediaDevices == null) {
+      return false;
+    }
 
     try {
-      await mediaDevices.getUserMedia({'audio': true});
+      await mediaDevices.getUserMedia(<dynamic, dynamic>{'audio': true});
       return true;
     } catch (_) {
       return false;
@@ -48,14 +50,18 @@ class RecordPluginWeb extends RecordPlatform {
 
   @override
   Future<void> pause() async {
-    if (kDebugMode) print('Recording paused');
+    if (kDebugMode) {
+      print('Recording paused');
+    }
 
     _mediaRecorder?.pause();
   }
 
   @override
   Future<void> resume() async {
-    if (kDebugMode) print('Recording resumed');
+    if (kDebugMode) {
+      print('Recording resumed');
+    }
     _mediaRecorder?.resume();
   }
 
@@ -72,7 +78,7 @@ class RecordPluginWeb extends RecordPlatform {
     _resetMediaRecorder();
 
     try {
-      final stream = await html.window.navigator.mediaDevices?.getUserMedia({
+      final html.MediaStream? stream = await html.window.navigator.mediaDevices?.getUserMedia(<dynamic, dynamic>{
         'audio': true,
         'audioBitsPerSecond': bitRate,
         'bitsPerSecond': bitRate,
@@ -80,7 +86,9 @@ class RecordPluginWeb extends RecordPlatform {
       if (stream != null) {
         _onStart(stream);
       } else {
-        print('Audio recording not supported.');
+        if (kDebugMode) {
+          print('Audio recording not supported.');
+        }
       }
     } catch (error, stack) {
       _onError(error, stack);
@@ -89,7 +97,7 @@ class RecordPluginWeb extends RecordPlatform {
 
   @override
   Future<String?> stop() async {
-    _onStopCompleter = Completer();
+    _onStopCompleter = Completer<String>();
 
     _mediaRecorder?.stop();
 
@@ -97,16 +105,21 @@ class RecordPluginWeb extends RecordPlatform {
   }
 
   void _onStart(html.MediaStream stream) {
-    if (kDebugMode) print('Start recording');
+    if (kDebugMode) {
+      print('Start recording');
+    }
 
     _mediaRecorder = html.MediaRecorder(stream);
-    _mediaRecorder?.addEventListener('dataavailable', _onDataAvailable);
+    _mediaRecorder?.addEventListener('dataAvailable', _onDataAvailable);
     _mediaRecorder?.addEventListener('stop', _onStop);
     _mediaRecorder?.start();
   }
 
-  void _onError(dynamic error, StackTrace trace) {
-    print(error);
+  // ignore: always_specify_types
+  void _onError(error, StackTrace trace) {
+    if (kDebugMode) {
+      print(error);
+    }
   }
 
   void _onDataAvailable(html.Event event) {
@@ -116,12 +129,14 @@ class RecordPluginWeb extends RecordPlatform {
   }
 
   void _onStop(html.Event event) {
-    if (kDebugMode) print('Stop recording');
+    if (kDebugMode) {
+      print('Stop recording');
+    }
 
     String? audioUrl;
 
     if (_chunks.isNotEmpty) {
-      final blob = html.Blob(_chunks);
+      final html.Blob blob = html.Blob(_chunks);
       audioUrl = html.Url.createObjectUrl(blob);
     }
 
@@ -131,16 +146,16 @@ class RecordPluginWeb extends RecordPlatform {
   }
 
   void _resetMediaRecorder() {
-    _mediaRecorder?.removeEventListener('dataavailable', _onDataAvailable);
-    _mediaRecorder?.removeEventListener('onstop', _onStop);
+    _mediaRecorder?.removeEventListener('dataAvailable', _onDataAvailable);
+    _mediaRecorder?.removeEventListener('stop', _onStop);
     _mediaRecorder = null;
 
-    _chunks = [];
+    _chunks = <html.Blob>[];
   }
 
   @override
   Future<Amplitude> getAmplitude() async {
     // TODO how to check amplitude values on web?
-    return Amplitude(current: -160.0, max: -160.0);
+    return Amplitude(current: -160, max: -160);
   }
 }
