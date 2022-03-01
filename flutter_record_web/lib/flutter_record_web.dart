@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:html' as html;
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:flutter_record_platform_interface/flutter_record_platform_interface.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 class FlutterRecordPluginWeb extends FlutterRecordPlatform {
   static void registerWith(Registrar registrar) {

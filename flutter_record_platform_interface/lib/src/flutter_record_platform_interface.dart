@@ -1,6 +1,6 @@
-import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'package:flutter_record_platform_interface/src/method_channel_flutter_record.dart';
 import 'package:flutter_record_platform_interface/src/types/types.dart';
+import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 /// The interface that implementations of Record must implement.
 ///
@@ -17,7 +17,7 @@ abstract class FlutterRecordPlatform extends PlatformInterface {
   /// class instead of implementing it.
   static const Object _token = Object();
 
-  static FlutterRecordPlatform _instance = MethodChannelFlutterRecord();
+  static FlutterRecordPlatform _instance = MethodChannelFlutterRecord() as FlutterRecordPlatform;
 
   /// The default instance of [FlutterRecordPlatform] to use.
   ///

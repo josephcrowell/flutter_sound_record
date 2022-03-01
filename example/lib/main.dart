@@ -4,9 +4,9 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:just_audio/just_audio.dart' as ap;
 import 'package:flutter_record/flutter_record.dart';
 import 'package:flutter_record_example/audio_player.dart';
+import 'package:just_audio/just_audio.dart' as ap;
 
 class AudioRecorder extends StatefulWidget {
   const AudioRecorder({required this.onStop, Key? key}) : super(key: key);

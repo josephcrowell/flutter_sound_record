@@ -63,7 +63,7 @@ public class FlutterRecordPlugin implements FlutterPlugin, ActivityAware {
   private void startPlugin(BinaryMessenger messenger, ActivityPluginBinding binding) {
 
     handler = new MethodCallHandlerImpl(binding.getActivity());
-    channel = new MethodChannel(messenger, "com.llfbandit.record");
+    channel = new MethodChannel(messenger, "com.josephcrowell.flutter_record");
     channel.setMethodCallHandler(handler);
 
     binding.addRequestPermissionsResultListener(handler);

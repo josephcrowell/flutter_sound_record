@@ -62,6 +62,31 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  flutter_record:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "3.1.0"
+  flutter_record_platform_interface:
+    dependency: "direct overridden"
+    description:
+      path: flutter_record_platform_interface
+      ref: HEAD
+      resolved-ref: "0a1637f313fb908c3502cf63345698411ba31bed"
+      url: "https://github.com/josephcrowell/flutter_record.git"
+    source: git
+    version: "0.2.0"
+  flutter_record_web:
+    dependency: "direct overridden"
+    description:
+      path: flutter_record_web
+      ref: HEAD
+      resolved-ref: "0a1637f313fb908c3502cf63345698411ba31bed"
+      url: "https://github.com/josephcrowell/flutter_record.git"
+    source: git
+    version: "0.2.1"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -193,27 +218,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
-  record:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "3.0.3"
-  flutter_record_platform_interface:
-    dependency: transitive
-    description:
-      name: flutter_record_platform_interface
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.0"
-  flutter_record_web:
-    dependency: transitive
-    description:
-      name: flutter_record_web
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.1"
   rxdart:
     dependency: transitive
     description:

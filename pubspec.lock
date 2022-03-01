@@ -66,15 +66,19 @@ packages:
     dependency: "direct main"
     description:
       path: flutter_record_platform_interface
-      relative: true
-    source: path
+      ref: HEAD
+      resolved-ref: "0a1637f313fb908c3502cf63345698411ba31bed"
+      url: "https://github.com/josephcrowell/flutter_record.git"
+    source: git
     version: "0.2.0"
   flutter_record_web:
     dependency: "direct main"
     description:
       path: flutter_record_web
-      relative: true
-    source: path
+      ref: HEAD
+      resolved-ref: "0a1637f313fb908c3502cf63345698411ba31bed"
+      url: "https://github.com/josephcrowell/flutter_record.git"
+    source: git
     version: "0.2.1"
   flutter_test:
     dependency: "direct dev"

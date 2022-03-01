@@ -12,6 +12,9 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
+  flutter_record_platform_interface: 0.2.0
+
+dependency_overrides:
   flutter_record_platform_interface:
     git:
       url: https://github.com/josephcrowell/flutter_record.git
