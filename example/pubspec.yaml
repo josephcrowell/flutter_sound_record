@@ -20,15 +20,11 @@ dependencies:
   flutter_record:
     path: ../
 
-dependency_overrides:
-  flutter_record_platform_interface:
-    git:
-      url: https://github.com/josephcrowell/flutter_record.git
-      path: flutter_record_platform_interface
-  flutter_record_web:
-    git:
-      url: https://github.com/josephcrowell/flutter_record.git
-      path: flutter_record_web
+#dependency_overrides:
+#  flutter_record_platform_interface:
+#    path: flutter_record_platform_interface
+#  flutter_record_web:
+#    path: flutter_record_web
 
 dev_dependencies:
   flutter_lints: ^1.0.4

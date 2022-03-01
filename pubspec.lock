@@ -65,20 +65,16 @@ packages:
   flutter_record_platform_interface:
     dependency: "direct main"
     description:
-      path: flutter_record_platform_interface
-      ref: HEAD
-      resolved-ref: "0a1637f313fb908c3502cf63345698411ba31bed"
-      url: "https://github.com/josephcrowell/flutter_record.git"
-    source: git
+      name: flutter_record_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.2.0"
   flutter_record_web:
     dependency: "direct main"
     description:
-      path: flutter_record_web
-      ref: HEAD
-      resolved-ref: "0a1637f313fb908c3502cf63345698411ba31bed"
-      url: "https://github.com/josephcrowell/flutter_record.git"
-    source: git
+      name: flutter_record_web
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.2.1"
   flutter_test:
     dependency: "direct dev"

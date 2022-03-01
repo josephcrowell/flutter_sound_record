@@ -10,18 +10,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_record_platform_interface: 0.2.0
-  flutter_record_web: 0.2.1
+  flutter_record_platform_interface: ^0.2.0
+  flutter_record_web: ^0.2.1
 
-dependency_overrides:
-  flutter_record_platform_interface:
-    git:
-      url: https://github.com/josephcrowell/flutter_record.git
-      path: flutter_record_platform_interface
-  flutter_record_web:
-    git:
-      url: https://github.com/josephcrowell/flutter_record.git
-      path: flutter_record_web
+#dependency_overrides:
+#  flutter_record_platform_interface:
+#    path: flutter_record_platform_interface
+#  flutter_record_web:
+#    path: flutter_record_web
 
 dev_dependencies:
   flutter_lints: ^1.0.4
