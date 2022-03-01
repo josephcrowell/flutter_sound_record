@@ -3,11 +3,11 @@ import 'dart:html' as html;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
-import 'package:record_platform_interface/record_platform_interface.dart';
+import 'package:flutter_record_platform_interface/flutter_record_platform_interface.dart';
 
-class RecordPluginWeb extends RecordPlatform {
+class FlutterRecordPluginWeb extends FlutterRecordPlatform {
   static void registerWith(Registrar registrar) {
-    RecordPlatform.instance = RecordPluginWeb();
+    FlutterRecordPlatform.instance = FlutterRecordPluginWeb();
   }
 
   // Media recorder object

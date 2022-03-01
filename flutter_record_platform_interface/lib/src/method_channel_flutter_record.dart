@@ -1,11 +1,11 @@
 import 'package:flutter/services.dart';
-import 'package:record_platform_interface/src/record_platform_interface.dart';
-import 'package:record_platform_interface/src/types/amplitude.dart';
-import 'package:record_platform_interface/src/types/audio_encoder.dart';
+import 'package:flutter_record_platform_interface/src/flutter_record_platform_interface.dart';
+import 'package:flutter_record_platform_interface/src/types/amplitude.dart';
+import 'package:flutter_record_platform_interface/src/types/audio_encoder.dart';
 
-class MethodChannelRecord extends RecordPlatform {
+class MethodChannelFlutterRecord extends FlutterRecordPlatform {
   static const MethodChannel _channel = MethodChannel(
-    'com.llfbandit.record',
+    'com.josephcrowell.flutter_record',
   );
 
   @override

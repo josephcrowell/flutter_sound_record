@@ -121,10 +121,10 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
-  record_platform_interface:
+  flutter_record_platform_interface:
     dependency: "direct main"
     description:
-      path: "../record_platform_interface"
+      path: "../flutter_record_platform_interface"
       relative: true
     source: path
     version: "0.2.0"

@@ -1,7 +1,10 @@
+# flutter_record
+
 Audio recorder from microphone to a given file path.
-No external dependencies, MediaRecorder is used for Android an AVAudioRecorder for iOS.
+No external dependencies, MediaRecorder is used for Android and AVAudioRecorder for iOS.
 
 ## Options
+
 - bit rate (be careful with this one on iOs)
 - sampling rate
 - encoder
@@ -9,21 +12,26 @@ No external dependencies, MediaRecorder is used for Android an AVAudioRecorder f
 ## Platforms
 
 ### Android
+
 ```xml
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <!-- Optional, you'll have to check this permission by yourself. -->
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
+
 min SDK: 16 (29 if you use OPUS)
 
 ### iOs
+
 ```xml
 <key>NSMicrophoneUsageDescription</key>
 <string>We need to access to the microphone to record audio file</string>
 ```
+
 min SDK: 8.0 (11 if you use OPUS)
 
 ## Supported encoders
+
 ```dart
 
 enum AudioEncoder {
@@ -52,11 +60,14 @@ enum AudioEncoder {
 ```
 
 ### Android
-https://developer.android.com/reference/android/media/MediaRecorder.AudioEncoder
+
+<https://developer.android.com/reference/android/media/MediaRecorder.AudioEncoder>
+
 ### iOs
-https://developer.apple.com/documentation/coreaudiotypes/coreaudiotype_constants/1572096-audio_data_format_identifiers
+<https://developer.apple.com/documentation/coreaudiotypes/coreaudiotype_constants/1572096-audio_data_format_identifiers>
 
 ## Usage
+
 ```dart
 // Import package
 import 'package:record/record.dart';
@@ -80,12 +91,14 @@ bool isRecording = await Record.isRecording();
 
 // There's nothing to dispose, this done internally each time you call stop method.
 // The plugin is aware of activity lifecycle.
-// So exiting, your app or activity will stop the recording (but won't delete the 
+// So exiting, your app or activity will stop the recording (but won't delete the
 // output file).
 ```
 
 ## Warnings
+
 Be sure to check supported values from the given links above.
 
 ## Known issues
+
 None.

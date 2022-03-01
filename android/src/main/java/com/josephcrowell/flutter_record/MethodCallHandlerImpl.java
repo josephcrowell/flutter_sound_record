@@ -1,4 +1,4 @@
-package com.llfbandit.record;
+package com.josephcrowell.flutter_record;
 
 import android.Manifest;
 import android.app.Activity;

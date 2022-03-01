@@ -1,6 +1,6 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-import 'package:record_platform_interface/src/method_channel_record.dart';
-import 'package:record_platform_interface/src/types/types.dart';
+import 'package:flutter_record_platform_interface/src/method_channel_flutter_record.dart';
+import 'package:flutter_record_platform_interface/src/types/types.dart';
 
 /// The interface that implementations of Record must implement.
 ///
@@ -8,26 +8,26 @@ import 'package:record_platform_interface/src/types/types.dart';
 /// as record does not consider newly added methods to be breaking changes.
 /// Extending this class ensures that the subclass will get the default
 /// implementation, while platform implementations that merely implement the
-/// interface will be broken by newly added [RecordPlatform] functions.
-abstract class RecordPlatform extends PlatformInterface {
-  /// Constructs a [RecordPlatform].
-  RecordPlatform() : super(token: _token);
+/// interface will be broken by newly added [FlutterRecordPlatform] functions.
+abstract class FlutterRecordPlatform extends PlatformInterface {
+  /// Constructs a [FlutterRecordPlatform].
+  FlutterRecordPlatform() : super(token: _token);
 
   /// A token used for verification of subclasses to ensure they extend this
   /// class instead of implementing it.
   static const Object _token = Object();
 
-  static RecordPlatform _instance = MethodChannelRecord();
+  static FlutterRecordPlatform _instance = MethodChannelFlutterRecord();
 
-  /// The default instance of [RecordPlatform] to use.
+  /// The default instance of [FlutterRecordPlatform] to use.
   ///
-  /// Defaults to [MethodChannelRecord].
-  static RecordPlatform get instance => _instance;
+  /// Defaults to [MethodChannelFlutterRecord].
+  static FlutterRecordPlatform get instance => _instance;
 
   /// Platform-specific plugins should set this to an instance of their own
-  /// platform-specific class that extends [RecordPlatform] when they register
+  /// platform-specific class that extends [FlutterRecordPlatform] when they register
   /// themselves.
-  static set instance(RecordPlatform instance) {
+  static set instance(FlutterRecordPlatform instance) {
     PlatformInterface.verifyToken(instance, _token);
     _instance = instance;
   }

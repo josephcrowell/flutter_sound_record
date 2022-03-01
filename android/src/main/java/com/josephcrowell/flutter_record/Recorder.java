@@ -1,4 +1,4 @@
-package com.llfbandit.record;
+package com.josephcrowell.flutter_record;
 
 import android.media.MediaRecorder;
 import android.os.Build;

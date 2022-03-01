@@ -1,4 +1,4 @@
-name: record_example
+name: flutter_record_example
 description: Demonstrates how to use the record plugin.
 version: 1.0.0
 
@@ -17,7 +17,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  record:
+  flutter_record:
     path: ../
 
 dev_dependencies:

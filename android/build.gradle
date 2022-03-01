@@ -1,4 +1,4 @@
-group 'com.llfbandit.record'
+group 'com.josephcrowell.flutter_record'
 version '1.0'
 
 buildscript {

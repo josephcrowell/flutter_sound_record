@@ -2,10 +2,10 @@ import Flutter
 import UIKit
 import AVFoundation
 
-public class SwiftRecordPlugin: NSObject, FlutterPlugin, AVAudioRecorderDelegate {
+public class SwiftFlutterRecordPlugin: NSObject, FlutterPlugin, AVAudioRecorderDelegate {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "com.llfbandit.record", binaryMessenger: registrar.messenger())
-    let instance = SwiftRecordPlugin()
+    let instance = SwiftFlutterRecordPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
     registrar.addApplicationDelegate(instance)
   }
@@ -63,11 +63,11 @@ public class SwiftRecordPlugin: NSObject, FlutterPlugin, AVAudioRecorderDelegate
         break
     }
   }
-    
+
   public func applicationWillTerminate(_ application: UIApplication) {
     stopRecording()
   }
-    
+
   public func applicationDidEnterBackground(_ application: UIApplication) {
     stopRecording()
   }
@@ -129,19 +129,19 @@ public class SwiftRecordPlugin: NSObject, FlutterPlugin, AVAudioRecorderDelegate
     stopRecording()
     result(path)
   }
-    
+
   fileprivate func pause(_ result: @escaping FlutterResult) {
     audioRecorder?.pause()
     isPaused = true
     result(nil)
   }
-    
+
   fileprivate func resume(_ result: @escaping FlutterResult) {
     if isPaused {
       audioRecorder?.record()
       isPaused = false
     }
-    
+
     result(nil)
   }
 
@@ -152,7 +152,7 @@ public class SwiftRecordPlugin: NSObject, FlutterPlugin, AVAudioRecorderDelegate
 
     if isRecording {
       audioRecorder?.updateMeters()
-      
+
       let current = audioRecorder?.averagePower(forChannel: 0)
 
       if (current! > maxAmplitude) {
@@ -180,7 +180,7 @@ public class SwiftRecordPlugin: NSObject, FlutterPlugin, AVAudioRecorderDelegate
   }
 
   // https://developer.apple.com/documentation/coreaudiotypes/coreaudiotype_constants/1572096-audio_data_format_identifiers
-  fileprivate func getEncoder(_ encoder: Int) -> Int {    
+  fileprivate func getEncoder(_ encoder: Int) -> Int {
     switch(encoder) {
     case 1:
       return Int(kAudioFormatMPEG4AAC_ELD)

@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:record_platform_interface/record_platform_interface.dart';
+import 'package:flutter_record_platform_interface/flutter_record_platform_interface.dart';
 
 /// Audio recorder API
-class Record implements RecordPlatform {
+class FlutterRecord implements FlutterRecordPlatform {
   @override
   Future<void> start({
     String? path,
@@ -11,7 +11,7 @@ class Record implements RecordPlatform {
     int bitRate = 128000,
     double samplingRate = 44100.0,
   }) {
-    return RecordPlatform.instance.start(
+    return FlutterRecordPlatform.instance.start(
       path: path,
       encoder: encoder,
       bitRate: bitRate,
@@ -21,41 +21,41 @@ class Record implements RecordPlatform {
 
   @override
   Future<String?> stop() {
-    return RecordPlatform.instance.stop();
+    return FlutterRecordPlatform.instance.stop();
   }
 
   @override
   Future<void> pause() {
-    return RecordPlatform.instance.pause();
+    return FlutterRecordPlatform.instance.pause();
   }
 
   @override
   Future<void> resume() {
-    return RecordPlatform.instance.resume();
+    return FlutterRecordPlatform.instance.resume();
   }
 
   @override
   Future<bool> isRecording() {
-    return RecordPlatform.instance.isRecording();
+    return FlutterRecordPlatform.instance.isRecording();
   }
 
   @override
   Future<bool> isPaused() async {
-    return RecordPlatform.instance.isPaused();
+    return FlutterRecordPlatform.instance.isPaused();
   }
 
   @override
   Future<bool> hasPermission() async {
-    return RecordPlatform.instance.hasPermission();
+    return FlutterRecordPlatform.instance.hasPermission();
   }
 
   @override
   Future<void> dispose() async {
-    return RecordPlatform.instance.dispose();
+    return FlutterRecordPlatform.instance.dispose();
   }
 
   @override
   Future<Amplitude> getAmplitude() {
-    return RecordPlatform.instance.getAmplitude();
+    return FlutterRecordPlatform.instance.getAmplitude();
   }
 }

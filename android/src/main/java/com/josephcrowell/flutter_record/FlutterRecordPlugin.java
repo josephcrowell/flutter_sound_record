@@ -1,4 +1,4 @@
-package com.llfbandit.record;
+package com.josephcrowell.flutter_record;
 
 import androidx.annotation.NonNull;
 
@@ -11,8 +11,9 @@ import io.flutter.plugin.common.MethodChannel;
 /**
  * RecordPlugin
  */
-public class RecordPlugin implements FlutterPlugin, ActivityAware {
-  /// The MethodChannel that will the communication between Flutter and native Android
+public class FlutterRecordPlugin implements FlutterPlugin, ActivityAware {
+  /// The MethodChannel that will the communication between Flutter and native
+  /// Android
   private MethodChannel channel;
   /// Our call handler
   private MethodCallHandlerImpl handler;
@@ -33,7 +34,6 @@ public class RecordPlugin implements FlutterPlugin, ActivityAware {
   }
   /// END FlutterPlugin
   /////////////////////////////////////////////////////////////////////////////
-
 
   /////////////////////////////////////////////////////////////////////////////
   /// ActivityAware
