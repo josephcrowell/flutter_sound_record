@@ -1,6 +1,7 @@
 # flutter_sound_record
 
-Audio recorder from microphone to a given file path.
+Audio recorder from microphone to a given file path forked from and based on [record]<https://github.com/llfbandit/record>.
+
 No external dependencies, MediaRecorder is used for Android and AVAudioRecorder for iOS.
 
 ## Options
