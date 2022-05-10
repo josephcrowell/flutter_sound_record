@@ -1,4 +1,4 @@
-package com.josephcrowell.flutter_record;
+package com.josephcrowell.flutter_sound_record;
 
 import android.Manifest;
 import android.app.Activity;

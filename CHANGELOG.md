@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.1.1
+
+* fix: Eleminate some deprecated functions and classes.
+* core: Rebrand.
+
 ## 3.1.0
 
 * fix: get build working on Android SDK 31

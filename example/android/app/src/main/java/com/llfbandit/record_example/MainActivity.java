@@ -1,4 +1,4 @@
-package com.josephcrowell.flutter_record_example;
+package com.josephcrowell.flutter_sound_record_example;
 
 import io.flutter.embedding.android.FlutterActivity;
 

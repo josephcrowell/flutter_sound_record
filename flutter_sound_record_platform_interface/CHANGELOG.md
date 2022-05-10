@@ -1,6 +1,7 @@
 ## 0.2.1
 
-- Fix flutter_record_platform_interface version.
+- Eliminate some deprecated functions and classes.
+- Rebrand.
 
 ## 0.2.0
 

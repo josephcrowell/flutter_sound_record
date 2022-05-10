@@ -2,12 +2,12 @@ import 'dart:async';
 import 'dart:html' as html;
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter_record_platform_interface/flutter_record_platform_interface.dart';
+import 'package:flutter_sound_record_platform_interface/flutter_sound_record_platform_interface.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
-class FlutterRecordPluginWeb extends FlutterRecordPlatform {
+class FlutterSoundRecordPluginWeb extends FlutterSoundRecordPlatform {
   static void registerWith(Registrar registrar) {
-    FlutterRecordPlatform.instance = FlutterRecordPluginWeb();
+    FlutterSoundRecordPlatform.instance = FlutterSoundRecordPluginWeb();
   }
 
   // Media recorder object

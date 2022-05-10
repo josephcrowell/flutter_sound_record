@@ -2,10 +2,10 @@ import Flutter
 import UIKit
 import AVFoundation
 
-public class SwiftFlutterRecordPlugin: NSObject, FlutterPlugin, AVAudioRecorderDelegate {
+public class SwiftFlutterSoundRecordPlugin: NSObject, FlutterPlugin, AVAudioRecorderDelegate {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "com.josephcrowell.flutter_record", binaryMessenger: registrar.messenger())
-    let instance = SwiftFlutterRecordPlugin()
+    let channel = FlutterMethodChannel(name: "com.josephcrowell.flutter_sound_record", binaryMessenger: registrar.messenger())
+    let instance = SwiftFlutterSoundRecordPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
     registrar.addApplicationDelegate(instance)
   }

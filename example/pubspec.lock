@@ -62,26 +62,26 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
-  flutter_record:
+  flutter_sound_record:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
     version: "3.1.0"
-  flutter_record_platform_interface:
-    dependency: transitive
+  flutter_sound_record_platform_interface:
+    dependency: "direct overridden"
     description:
-      name: flutter_record_platform_interface
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "../flutter_sound_record_platform_interface"
+      relative: true
+    source: path
     version: "0.2.0"
-  flutter_record_web:
-    dependency: transitive
+  flutter_sound_record_web:
+    dependency: "direct overridden"
     description:
-      name: flutter_record_web
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "../flutter_sound_record_web"
+      relative: true
+    source: path
     version: "0.2.1"
   flutter_web_plugins:
     dependency: transitive

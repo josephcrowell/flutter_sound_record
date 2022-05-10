@@ -1,5 +1,5 @@
-import 'package:flutter_record_platform_interface/src/method_channel_flutter_record.dart';
-import 'package:flutter_record_platform_interface/src/types/types.dart';
+import 'package:flutter_sound_record_platform_interface/src/method_channel_flutter_sound_record.dart';
+import 'package:flutter_sound_record_platform_interface/src/types/types.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 /// The interface that implementations of Record must implement.
@@ -8,26 +8,26 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 /// as record does not consider newly added methods to be breaking changes.
 /// Extending this class ensures that the subclass will get the default
 /// implementation, while platform implementations that merely implement the
-/// interface will be broken by newly added [FlutterRecordPlatform] functions.
-abstract class FlutterRecordPlatform extends PlatformInterface {
-  /// Constructs a [FlutterRecordPlatform].
-  FlutterRecordPlatform() : super(token: _token);
+/// interface will be broken by newly added [FlutterSoundRecordPlatform] functions.
+abstract class FlutterSoundRecordPlatform extends PlatformInterface {
+  /// Constructs a [FlutterSoundRecordPlatform].
+  FlutterSoundRecordPlatform() : super(token: _token);
 
   /// A token used for verification of subclasses to ensure they extend this
   /// class instead of implementing it.
   static const Object _token = Object();
 
-  static FlutterRecordPlatform _instance = MethodChannelFlutterRecord() as FlutterRecordPlatform;
+  static FlutterSoundRecordPlatform _instance = MethodChannelFlutterSoundRecord();
 
-  /// The default instance of [FlutterRecordPlatform] to use.
+  /// The default instance of [FlutterSoundRecordPlatform] to use.
   ///
-  /// Defaults to [MethodChannelFlutterRecord].
-  static FlutterRecordPlatform get instance => _instance;
+  /// Defaults to [MethodChannelFlutterSoundRecord].
+  static FlutterSoundRecordPlatform get instance => _instance;
 
   /// Platform-specific plugins should set this to an instance of their own
-  /// platform-specific class that extends [FlutterRecordPlatform] when they register
+  /// platform-specific class that extends [FlutterSoundRecordPlatform] when they register
   /// themselves.
-  static set instance(FlutterRecordPlatform instance) {
+  static set instance(FlutterSoundRecordPlatform instance) {
     PlatformInterface.verifyToken(instance, _token);
     _instance = instance;
   }

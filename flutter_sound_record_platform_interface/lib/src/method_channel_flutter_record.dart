@@ -1,11 +1,11 @@
 import 'package:flutter/services.dart';
-import 'package:flutter_record_platform_interface/src/flutter_record_platform_interface.dart';
-import 'package:flutter_record_platform_interface/src/types/amplitude.dart';
-import 'package:flutter_record_platform_interface/src/types/audio_encoder.dart';
+import 'package:flutter_sound_record_platform_interface/src/flutter_sound_record_platform_interface.dart';
+import 'package:flutter_sound_record_platform_interface/src/types/amplitude.dart';
+import 'package:flutter_sound_record_platform_interface/src/types/audio_encoder.dart';
 
-class MethodChannelFlutterRecord extends FlutterRecordPlatform {
+class MethodChannelFlutterSoundRecord extends FlutterSoundRecordPlatform {
   static const MethodChannel _channel = MethodChannel(
-    'com.josephcrowell.flutter_record',
+    'com.josephcrowell.flutter_sound_record',
   );
 
   @override

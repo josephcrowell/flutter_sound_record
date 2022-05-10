@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter_record_platform_interface/flutter_record_platform_interface.dart';
+import 'package:flutter_sound_record_platform_interface/flutter_sound_record_platform_interface.dart';
 
 /// Audio recorder API
-class FlutterRecord implements FlutterRecordPlatform {
+class FlutterSoundRecord implements FlutterSoundRecordPlatform {
   @override
   Future<void> start({
     String? path,
@@ -11,7 +11,7 @@ class FlutterRecord implements FlutterRecordPlatform {
     int bitRate = 128000,
     double samplingRate = 44100.0,
   }) {
-    return FlutterRecordPlatform.instance.start(
+    return FlutterSoundRecordPlatform.instance.start(
       path: path,
       encoder: encoder,
       bitRate: bitRate,
@@ -21,41 +21,41 @@ class FlutterRecord implements FlutterRecordPlatform {
 
   @override
   Future<String?> stop() {
-    return FlutterRecordPlatform.instance.stop();
+    return FlutterSoundRecordPlatform.instance.stop();
   }
 
   @override
   Future<void> pause() {
-    return FlutterRecordPlatform.instance.pause();
+    return FlutterSoundRecordPlatform.instance.pause();
   }
 
   @override
   Future<void> resume() {
-    return FlutterRecordPlatform.instance.resume();
+    return FlutterSoundRecordPlatform.instance.resume();
   }
 
   @override
   Future<bool> isRecording() {
-    return FlutterRecordPlatform.instance.isRecording();
+    return FlutterSoundRecordPlatform.instance.isRecording();
   }
 
   @override
   Future<bool> isPaused() async {
-    return FlutterRecordPlatform.instance.isPaused();
+    return FlutterSoundRecordPlatform.instance.isPaused();
   }
 
   @override
   Future<bool> hasPermission() async {
-    return FlutterRecordPlatform.instance.hasPermission();
+    return FlutterSoundRecordPlatform.instance.hasPermission();
   }
 
   @override
   Future<void> dispose() async {
-    return FlutterRecordPlatform.instance.dispose();
+    return FlutterSoundRecordPlatform.instance.dispose();
   }
 
   @override
   Future<Amplitude> getAmplitude() {
-    return FlutterRecordPlatform.instance.getAmplitude();
+    return FlutterSoundRecordPlatform.instance.getAmplitude();
   }
 }

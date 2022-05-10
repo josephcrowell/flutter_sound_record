@@ -1,4 +1,4 @@
-package com.josephcrowell.flutter_record;
+package com.josephcrowell.flutter_sound_record;
 
 import androidx.annotation.NonNull;
 
@@ -11,7 +11,7 @@ import io.flutter.plugin.common.MethodChannel;
 /**
  * RecordPlugin
  */
-public class FlutterRecordPlugin implements FlutterPlugin, ActivityAware {
+public class FlutterSoundRecordPlugin implements FlutterPlugin, ActivityAware {
   /// The MethodChannel that will the communication between Flutter and native
   /// Android
   private MethodChannel channel;
@@ -63,7 +63,7 @@ public class FlutterRecordPlugin implements FlutterPlugin, ActivityAware {
   private void startPlugin(BinaryMessenger messenger, ActivityPluginBinding binding) {
 
     handler = new MethodCallHandlerImpl(binding.getActivity());
-    channel = new MethodChannel(messenger, "com.josephcrowell.flutter_record");
+    channel = new MethodChannel(messenger, "com.josephcrowell.flutter_sound_record");
     channel.setMethodCallHandler(handler);
 
     binding.addRequestPermissionsResultListener(handler);

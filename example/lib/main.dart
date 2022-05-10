@@ -4,8 +4,8 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_record/flutter_record.dart';
-import 'package:flutter_record_example/audio_player.dart';
+import 'package:flutter_sound_record/flutter_sound_record.dart';
+import 'package:flutter_sound_record_example/audio_player.dart';
 import 'package:just_audio/just_audio.dart' as ap;
 
 class AudioRecorder extends StatefulWidget {
@@ -28,7 +28,7 @@ class _AudioRecorderState extends State<AudioRecorder> {
   int _recordDuration = 0;
   Timer? _timer;
   Timer? _ampTimer;
-  final FlutterRecord _audioRecorder = FlutterRecord();
+  final FlutterSoundRecord _audioRecorder = FlutterSoundRecord();
   Amplitude? _amplitude;
 
   @override

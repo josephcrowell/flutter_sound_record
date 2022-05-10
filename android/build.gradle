@@ -1,4 +1,4 @@
-group 'com.josephcrowell.flutter_record'
+group 'com.josephcrowell.flutter_sound_record'
 version '1.0'
 
 buildscript {

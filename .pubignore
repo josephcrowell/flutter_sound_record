@@ -1,5 +1,5 @@
-flutter_record_platform_interface/*
-flutter_record_web/*
+flutter_sound_record_platform_interface/*
+flutter_sound_record_web/*
 
 **/doc/api/
 **/ios/Flutter/.last_build_id
