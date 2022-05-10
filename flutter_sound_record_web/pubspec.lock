@@ -65,10 +65,10 @@ packages:
   flutter_sound_record_platform_interface:
     dependency: "direct main"
     description:
-      path: "../flutter_sound_record_platform_interface"
-      relative: true
-    source: path
-    version: "0.2.0"
+      name: flutter_sound_record_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter

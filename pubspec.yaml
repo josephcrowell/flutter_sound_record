@@ -1,6 +1,6 @@
 name: flutter_sound_record
 description: Audio recorder from microphone to a given file path with multiple codecs, bit rate and sampling rate options.
-version: 3.1.1
+version: 3.1.2
 homepage: https://github.com/josephcrowell/flutter_sound_record/
 
 environment:
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_sound_record_platform_interface: ^0.2.1
+  flutter_sound_record_platform_interface: ^0.2.2
   flutter_sound_record_web: ^0.2.2
 
 # dependency_overrides:

@@ -11,8 +11,8 @@ environment:
   flutter: ">=2.0.2"
 
 dependencies:
-  path_provider: ^2.0.1
-  just_audio: ^0.7.1
+  path_provider: ^2.0.10
+  just_audio: ^0.9.21
 
   flutter:
     sdk: flutter

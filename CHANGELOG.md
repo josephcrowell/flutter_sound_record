@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.2
+
+* fix: Use corrected platform interface.
+
 ## 3.1.1
 
 * fix: Eleminate some deprecated functions and classes.

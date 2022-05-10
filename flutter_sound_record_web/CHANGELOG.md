@@ -1,3 +1,7 @@
+## 0.2.3
+
+- Use corrected platform interface
+
 ## 0.2.2
 
 - Eliminate some deprecated functions and classes.

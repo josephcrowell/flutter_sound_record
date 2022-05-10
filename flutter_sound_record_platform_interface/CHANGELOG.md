@@ -1,3 +1,7 @@
+## 0.2.2
+
+- Correct file name.
+
 ## 0.2.1
 
 - Eliminate some deprecated functions and classes.
