@@ -1,11 +1,9 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'dart:async';
 
+import 'package:example/audio_player.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound_record/flutter_sound_record.dart';
-import 'package:flutter_sound_record_example/audio_player.dart';
 import 'package:just_audio/just_audio.dart' as ap;
 
 class AudioRecorder extends StatefulWidget {
