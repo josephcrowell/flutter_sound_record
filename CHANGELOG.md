@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.0
+
+* core: convert to kotlin
+
 ## 3.1.2
 
 * fix: Use corrected platform interface.
