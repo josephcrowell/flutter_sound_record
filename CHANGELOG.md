@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.1
+
+* core: Update dependencies.
+
 ## 3.2.0
 
 * core: convert to kotlin
