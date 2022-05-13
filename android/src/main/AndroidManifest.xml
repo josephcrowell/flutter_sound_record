@@ -1,1 +1,2 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.josephcrowell.flutter_sound_record"></manifest>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.josephcrowell.flutter_sound_record" />
