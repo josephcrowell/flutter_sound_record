@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.0
+
+* fix: Add support for AGP 8.0
+
 ## 3.2.1
 
 * core: Update dependencies.
