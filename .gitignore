@@ -1,6 +1,5 @@
 # Miscellaneous
 *.class
-*.lock
 *.log
 *.pyc
 *.swp
@@ -67,4 +66,3 @@ app.*.map.json
 # custom ignores
 Thumbs.db
 *.bak
-pubspec.lock
