@@ -27,7 +27,9 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     compileSdkVersion flutter.compileSdkVersion
-    namespace 'com.josephcrowell.example'
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.josephcrowell.example'
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -58,7 +60,6 @@ android {
             signingConfig signingConfigs.debug
         }
     }
-    namespace 'com.josephcrowell.example'
 }
 
 flutter {
