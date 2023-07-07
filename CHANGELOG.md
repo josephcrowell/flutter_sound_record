@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.3.0
+## 3.3.1
 
 * fix: Add support for AGP 8.0
 
