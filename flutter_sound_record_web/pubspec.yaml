@@ -1,6 +1,6 @@
 name: flutter_sound_record_web
 description: Flutter Record web implementation.
-version: 0.3.1
+version: 0.3.2
 homepage: https://github.com/josephcrowell/flutter_sound_record/tree/master/flutter_sound_record_web
 
 environment:
