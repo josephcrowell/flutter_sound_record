@@ -110,7 +110,7 @@ class FlutterSoundRecordPluginWeb extends FlutterSoundRecordPlatform {
     }
 
     _mediaRecorder = html.MediaRecorder(stream);
-    _mediaRecorder?.addEventListener('dataAvailable', _onDataAvailable);
+    _mediaRecorder?.addEventListener('dataavailable', _onDataAvailable);
     _mediaRecorder?.addEventListener('stop', _onStop);
     _mediaRecorder?.start();
   }
@@ -146,7 +146,7 @@ class FlutterSoundRecordPluginWeb extends FlutterSoundRecordPlatform {
   }
 
   void _resetMediaRecorder() {
-    _mediaRecorder?.removeEventListener('dataAvailable', _onDataAvailable);
+    _mediaRecorder?.removeEventListener('dataavailable', _onDataAvailable);
     _mediaRecorder?.removeEventListener('stop', _onStop);
     _mediaRecorder = null;
 
