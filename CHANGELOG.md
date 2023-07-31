@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.2
+
+* fix: Depend on new flutter_sound_record_web version
+
 ## 3.3.1
 
 * fix: Add support for AGP 8.0

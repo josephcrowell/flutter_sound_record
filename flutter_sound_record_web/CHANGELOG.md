@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2
+
+- Bug fixes.
+
 ## 0.3.1
 
 - Update dependencies.
